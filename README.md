@@ -92,9 +92,25 @@ To verify that the plugin is working correctly, you can check the logs of the ru
 
 docker logs kong-container
 
-
 You should see entries like this:
 
 
 <-- Incoming request: /some-path [Memory usage: 1024.23 KB]
 --> Outgoing response: /upstream-path [Memory usage: 2048.56 KB]
+
+
+
+**Contributing**
+If you would like to contribute to this project, feel free to submit a pull request with improvements, bug fixes, or new features!
+
+Contact
+For any questions or issues, please open an issue in this repository or contact me at usmani_hamas@live.com.
+
+
+### Key Points in the README:
+- **Overview**: Describes the plugin's purpose and functionality.
+- **Installation**: Step-by-step instructions to clone the repo, update the Dockerfile, and run the Kong container.
+- **Example Logs**: What to expect when the plugin is running.
+- **License and Contributing**: Standard sections to cover usage and contribution guidelines.
+
+Feel free to modify this according to your specific use case! Let me know if you need further assistance.
