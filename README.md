@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains a custom plugin for Kong Gateway (v2.8.5) that enhances logging by capturing and printing:
+This repository contains a custom plugin for Kong Gateway (v2.8.x) that enhances logging by capturing and printing:
 - Incoming requests (with `<--` to indicate requests coming into Kong).
 - Outgoing requests (with `-->` to indicate requests leaving Kong).
 - Memory usage in kilobytes for each operation in the format `[memory_used]`.
