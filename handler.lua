@@ -7,7 +7,7 @@ CustomLoggingHandler.VERSION = "1.0.0"
 CustomLoggingHandler.PRIORITY = 10
 
 function CustomLoggingHandler:new()
-  CustomLoggingHandler.super.new(self, "custom-logging-plugin")
+  CustomLoggingHandler.super.new(self, "kong-memory-logging")
 end
 
 -- Log incoming requests
