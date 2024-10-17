@@ -24,50 +24,53 @@ This plugin is compatible with **Kong 2.8.5** and is designed to be used in conj
 2. **Git**: Make sure Git is installed on your machine.
 3. **Docker**: The plugin is designed to work with Kong deployed using Docker.
 
-### Step 1: Clone the Repository
+## Step 1: Clone the Repository
 
 Clone this repository to your local machine:
 
 git clone https://github.com/mhamasusmani/kong-memory-logging.git
-Step 2: Update Kong's Dockerfile
+
+## Step 2: Update Kong's Dockerfile
+
 To include this custom plugin in your Kong deployment, you'll need to modify the Dockerfile to copy the plugin files into the appropriate directory inside the Kong container.
 1.	Navigate to your Kong installation folder where the Dockerfile is located.
 2.	Modify the Dockerfile to copy the plugin into Kong:
-Dockerfile
+
+### Dockerfile
 
 FROM kong:2.8.5
 
-# Add the custom logging plugin
+### Add the custom logging plugin
 COPY /path-to-your-plugin-directory/kong-memory-logging /usr/local/share/lua/5.1/kong/kong-memory-logging
 
-# Expose necessary ports (Optional)
+### Expose necessary ports (Optional)
 EXPOSE 8000 8443 8001 8444
 
-# Set environment variables for Kong
+### Set environment variables for Kong
 
 ENV KONG_LOG_LEVEL=debug
 
 ENV KONG_PLUGINS=kong-memory-logging
 
-# Run Kong
+### Run Kong
 CMD [ "kong", "docker-start" ]
 
-# This Dockerfile does the following:
+#### This Dockerfile does the following:
 •	Copies the custom plugin from the kong folder in your repository to Kong’s plugin directory.
 
 •	Sets KONG_LOG_LEVEL=debug to ensure detailed logging.
 
 •	Adds custom-logging-plugin to the list of enabled plugins.
 
-# Step 3: Rebuild and Run the Docker Container
+## Step 3: Rebuild and Run the Docker Container
 
-Rebuild the Kong Docker container to include the custom logging plugin:
+Rebuild the Kong Docker container to include the memory logging plugin:
 
 docker build -t my-kong:latest .
 
 docker run -d --name kong-container -p 8000:8000 -p 8443:8443 my-kong:latest
 
-# Step 4: Enable the Plugin in kong.yml
+## Step 4: Enable the Plugin in kong.yml
 
 In your kong.yml declarative configuration file, enable the plugin for your service or route:
 
@@ -85,7 +88,7 @@ plugins:
   - name: kong-memory-logging
     service: example-service
 
-### Step 5: Verify the Logs
+## Step 5: Verify the Logs
 
 To verify that the plugin is working correctly, you can check the logs of the running Kong container:
 
