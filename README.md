@@ -44,6 +44,7 @@ COPY /path-to-your-plugin-directory/kong-memory-logging /usr/local/share/lua/5.1
 EXPOSE 8000 8443 8001 8444
 
 # Set environment variables for Kong
+
 ENV KONG_LOG_LEVEL=debug
 ENV KONG_PLUGINS=kong-memory-logging
 
@@ -72,18 +73,28 @@ services:
 plugins:
   - name: kong-memory-logging
     service: example-service
-Step 5: Verify the Logs
+
+### Step 5: Verify the Logs
+
 To verify that the plugin is working correctly, you can check the logs of the running Kong container:
+
 docker logs kong-container
+
 You should see entries like this:
+
 <-- Incoming request: /some-path [Memory usage: 1024.23 KB]
 --> Outgoing response: /upstream-path [Memory usage: 2048.56 KB]
-Contributing
+
+# Contributing
+
 If you would like to contribute to this project, feel free to submit a pull request with improvements, bug fixes, or new features!
-Contact
+
+# Contact
+
 For any questions or issues, please open an issue in this repository or contact me at Usmani_hamas@live.com.
 
 ### Key Points in the README:
+
 - **Overview**: Describes the plugin's purpose and functionality.
 - **Installation**: Step-by-step instructions to clone the repo, update the Dockerfile, and run the Kong container.
 - **Example Logs**: What to expect when the plugin is running.
