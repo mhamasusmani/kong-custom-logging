@@ -97,6 +97,7 @@ docker logs kong-container
 You should see entries like this:
 
 <-- Incoming request: /some-path [Memory usage: 1024.23 KB]
+
 --> Outgoing response: /upstream-path [Memory usage: 2048.56 KB]
 
 # Contributing
