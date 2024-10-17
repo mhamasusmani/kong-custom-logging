@@ -46,6 +46,7 @@ EXPOSE 8000 8443 8001 8444
 # Set environment variables for Kong
 
 ENV KONG_LOG_LEVEL=debug
+
 ENV KONG_PLUGINS=kong-memory-logging
 
 # Run Kong
