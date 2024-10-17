@@ -51,16 +51,26 @@ ENV KONG_PLUGINS=kong-memory-logging
 
 # Run Kong
 CMD [ "kong", "docker-start" ]
-This Dockerfile does the following:
+
+# This Dockerfile does the following:
 •	Copies the custom plugin from the kong folder in your repository to Kong’s plugin directory.
+
 •	Sets KONG_LOG_LEVEL=debug to ensure detailed logging.
+
 •	Adds custom-logging-plugin to the list of enabled plugins.
-Step 3: Rebuild and Run the Docker Container
+
+# Step 3: Rebuild and Run the Docker Container
+
 Rebuild the Kong Docker container to include the custom logging plugin:
+
 docker build -t my-kong:latest .
+
 docker run -d --name kong-container -p 8000:8000 -p 8443:8443 my-kong:latest
-Step 4: Enable the Plugin in kong.yml
+
+# Step 4: Enable the Plugin in kong.yml
+
 In your kong.yml declarative configuration file, enable the plugin for your service or route:
+
 _format_version: "2.1"
 
 services:
